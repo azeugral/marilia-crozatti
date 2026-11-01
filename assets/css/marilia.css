@@ -74,9 +74,9 @@ svg { width: 1em; height: 1em; flex: none; }
 .topo.solido { background: rgba(241, 236, 227, .94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 1px 0 var(--linha); }
 .topo.some { transform: translateY(-100%); }
 .marca { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--verde); margin-right: auto; }
-.marca-mc { width: 16px; height: 46px; }
-.marca-mc .t { stroke-width: 22; }
-.marca span { font: 300 1.3rem/1 'Antonio', sans-serif; letter-spacing: .04em; color: var(--tinta); }
+.marca-mc { width: 20px; height: 54px; }
+.marca-mc { stroke-width: 34; }
+.marca span { font: 400 1.7rem/1.1 'Antonio', sans-serif; letter-spacing: .03em; color: var(--tinta); }
 .topo nav { display: flex; gap: 26px; }
 .topo nav a { position: relative; text-decoration: none; font-size: .86rem; letter-spacing: .08em; text-transform: uppercase; color: var(--tinta-2); transition: color .3s; padding: 6px 0; }
 .topo nav a::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; background: var(--verde); transform: scaleX(0); transform-origin: right; transition: transform .4s var(--ease); }
@@ -113,7 +113,7 @@ svg { width: 1em; height: 1em; flex: none; }
 .hero-chapeu { display: flex; align-items: center; gap: 10px; font-size: .82rem; letter-spacing: .2em; text-transform: uppercase; color: var(--verde-2); }
 .hero-chapeu svg { width: 12px; height: 12px; color: var(--ouro); }
 .hero-nome { margin: 2.4vh 0 2.2vh; font: 200 clamp(4.2rem, 10.4vw, 10.6rem)/.88 'Antonio', sans-serif; text-transform: uppercase; letter-spacing: -.005em; color: var(--tinta); }
-.hero-nome .ln { display: block; overflow: hidden; padding: .14em 0 .04em; margin-top: -.14em; }
+.hero-nome .ln { display: block; overflow: hidden; padding: .18em 0 .14em; margin: -.18em 0 -.1em; }
 .hero-nome .ln > span { display: block; transform: translateY(105%); transition: transform 1.2s var(--ease); }
 .hero-nome .ln:nth-child(2) > span { transition-delay: .12s; color: var(--verde); }
 .hero.entrou .hero-nome .ln > span { transform: none; }
@@ -365,7 +365,7 @@ svg { width: 1em; height: 1em; flex: none; }
 .rod-grade { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 34px; }
 .rod-marca { display: flex; gap: 18px; align-items: center; }
 .rod-mc { width: 26px; height: 78px; color: var(--ouro-claro); }
-.rod-mc .t { stroke-width: 15; }
+.rod-mc { stroke-width: 34; }
 .rod-nome { font: 300 1.7rem/1.1 'Antonio', sans-serif; text-transform: uppercase; color: var(--papel); margin-bottom: 4px; }
 .rod-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
 .rod-links li, .rod-links a { display: flex; align-items: center; gap: 10px; text-decoration: none; }
