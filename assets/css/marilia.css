@@ -29,7 +29,7 @@ body {
 img, video { display: block; max-width: 100%; }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; }
-h1, h2, h3 { margin: 0; font-weight: 400; }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; }
 p { margin: 0; }
 svg { width: 1em; height: 1em; flex: none; }
 ::selection { background: var(--verde); color: var(--papel); }
@@ -267,15 +267,15 @@ svg { width: 1em; height: 1em; flex: none; }
 
 /* ---------- estúdio ---------- */
 .estudio { background: var(--papel-2); }
-.estudio-grade { display: grid; grid-template-columns: 1.25fr .7fr 1fr; gap: 18px; align-items: end; }
-.estudio-grade figure { margin: 0; overflow: hidden; }
+.estudio-grade { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.estudio-grade > * { margin: 0; overflow: hidden; aspect-ratio: 3 / 4; }
 .estudio-grade img { width: 100%; height: 100%; object-fit: cover; }
-.eg-a { aspect-ratio: 1; }
-.eg-c { aspect-ratio: 4 / 5; }
+.eg-a img { object-position: 55% 50%; }
 .eg-b { transition-delay: .08s; } .eg-c { transition-delay: .16s; }
+.nq { white-space: nowrap; }
 .pode { margin-top: clamp(60px, 9vh, 100px); padding: clamp(28px, 4vw, 48px); border: 1px solid var(--linha); background: var(--papel); }
 .pode h3 { font: 300 clamp(1.6rem, 2.6vw, 2.2rem)/1.1 'Antonio', sans-serif; text-transform: uppercase; margin-bottom: 22px; }
-.pode ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px 28px; }
+.pode ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 20px 28px; }
 .pode li { position: relative; padding-top: 16px; border-top: 1px solid var(--linha); font-size: .94rem; color: var(--tinta-2); }
 .pode b { display: block; color: var(--tinta); font-weight: 500; margin-bottom: 4px; }
 
@@ -367,8 +367,9 @@ svg { width: 1em; height: 1em; flex: none; }
   .energ-topo { grid-template-columns: minmax(0, 280px) minmax(0, 1fr); gap: 0 4vw; }
   .energ-card { flex-basis: calc((100% - 40px) / 3); }
   .aromas { grid-template-columns: repeat(2, 1fr); }
-  .estudio-grade { grid-template-columns: 1fr 1fr; }
-  .eg-a { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+  .estudio-grade { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .pode ul { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .estudio-grade .eg-a { grid-column: 1 / -1; aspect-ratio: 3 / 2; }
 }
 @media (max-width: 900px) {
   .sobre-grade, .ag-grade, .comp-area { grid-template-columns: 1fr; }
@@ -412,7 +413,7 @@ svg { width: 1em; height: 1em; flex: none; }
   .aromas h3 { font-size: 1.2rem; }
   .efeito { font-size: .64rem; letter-spacing: .1em; }
   .aromas p:last-child { font-size: .84rem; }
-  .estudio-grade { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .estudio-grade { gap: 10px; }
   .numeros div + div { padding-left: 12px; }
   .ficha-dupla { grid-template-columns: 1fr; }
   .luz-ant, .luz-prox { top: auto; bottom: 18px; }
