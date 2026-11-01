@@ -91,10 +91,6 @@ PARES = [
     ('093_0', 'dir', .05, .05, 'Reforma', 'Trevo com traço refeito e preenchimento novo'),
 ]
 
-# reformas com o "antes" no círculo (já vêm assim do Instagram)
-INSETS = [('316_0', 'Nossa Senhora com flores azuis e nomes', .5), ('356_0', 'Borboleta nas costas', .5),
-          ('358_0', 'Fechamento floral do antebraço', .5), ('333_0', 'Costela-de-adão no ombro', .5)]
-
 # cartões de estilo (os 7 do carrossel "Estilos que eu trabalho")
 ESTILOS = [('329_0', .4), ('053_1', .45), ('425_0', .45), ('209_0', .45), ('297_0', .35), ('316_1', .45)]
 
@@ -129,14 +125,15 @@ def main():
         d, a = metade(n, lado, cima, baixo)
         salvar(recorte(d, 1.4, .5), 'reformas', f'{n}-depois', (540,))
         salvar(recorte(a, 1.4, .5), 'reformas', f'{n}-antes', (540,))
-    for n, _, fy in INSETS: salvar(recorte(abrir(n), 1.25, fy), 'reformas', n, (480, 800))
     for n, fy in ESTILOS: salvar(recorte(abrir(n), 1.25, fy), 'estilos', n, (480, 720))
     salvar(recorte(metade('208_0', 'esq', .12, .02)[0], 1.25, .5), 'estilos', '208_0', (480,))
 
     # topo: a energética com papoula, inteira em pé
     salvar(recorte(abrir('297_0'), 1.6, .35), 'hero', 'papoula', (720, 1170), 82)
     # artista, estúdio e o projeto Serendipidade
-    salvar(recorte(abrir('459_0'), 1.25, .3), 'artista', 'marilia', (720,), 82)
+    # retrato enviado pela cliente (substituiu a foto 459 e o vídeo 515 no "Sobre")
+    ret = Image.open(os.path.join(REF, 'marilia-retrato.jpg')).convert('RGB')
+    salvar(recorte(ret, 1.25, .5, .3), 'artista', 'marilia', (720, 1024), 84)
     salvar(recorte(abrir('176_0'), 1.25, .35), 'artista', 'marilia-estudio', (640,), 82)
     salvar(recorte(abrir('360_0'), 1.25, .55), 'estudio', 'sala', (720,), 82)
     salvar(recorte(abrir('016_0'), 1.0, 1.0), 'estudio', 'atendimento', (720, 1080), 82)
@@ -144,7 +141,7 @@ def main():
     salvar(recorte(abrir('053_3'), 1.25, .5), 'serendipidade', 'tiragem', (640, 1080))
 
     if '--videos' in os.sys.argv:
-        video('089', som=True); video('666', som=True); video('515', som=True)
+        video('089', som=True); video('666', som=True)
 
     print(len(obras), 'obras')
 
