@@ -1,4 +1,4 @@
-/* Marília Crozatti: topo, menu, entradas, vídeos com fala, portfólio, comparador, trilho, ficha do WhatsApp. */
+/* Marília Crozatti: topo, menu, entradas, vídeos com fala, portfólio, comparador, ficha do WhatsApp. */
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -197,13 +197,6 @@
     luz.addEventListener('touchstart', e => { x0 = e.touches[0].clientX; }, { passive: true });
     luz.addEventListener('touchend', e => { if (x0 === null) return; const dx = e.changedTouches[0].clientX - x0; if (Math.abs(dx) > 50) passa(dx < 0 ? 1 : -1); x0 = null; });
   }
-
-  /* trilho das energéticas */
-  const trilho = $('#energ-trilho');
-  $$('[data-trilho]').forEach(b => b.addEventListener('click', () => {
-    const f = $('figure', trilho); const passo = f ? f.getBoundingClientRect().width + 16 : 300;
-    trilho.scrollBy({ left: passo * +b.dataset.trilho * 2, behavior: reduz ? 'auto' : 'smooth' });
-  }));
 
   /* comparador de reformas: a linha acompanha o dedo/mouse; as miniaturas trocam o par */
   const comp = $('#comp');

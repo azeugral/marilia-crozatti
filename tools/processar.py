@@ -120,7 +120,7 @@ def main():
     with open(os.path.join(SITE, 'assets', 'js', 'obras.js'), 'w', encoding='utf-8') as f:
         f.write('/* gerado por tools/processar.py */\nwindow.OBRAS = ' + json.dumps(obras, ensure_ascii=False) + ';\n')
 
-    for n, *_, fy in ENERG: salvar(recorte(abrir(n), 1.25, fy), 'energ', n, (480, 800))
+    for n, *_, fy in ENERG: salvar(recorte(abrir(n), 1.25, fy), 'energ', n, (480, 800, 1080), 84)
     for i, (n, lado, cima, baixo, *_) in enumerate(PARES):
         d, a = metade(n, lado, cima, baixo)
         salvar(recorte(d, 1.4, .5), 'reformas', f'{n}-depois', (540,))
