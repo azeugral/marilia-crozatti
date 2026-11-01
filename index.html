@@ -20,9 +20,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/fontes/antonio-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fontes/jost-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/img/hero/papoula-1170.webp" as="image" media="(min-width: 700px)">
+<link rel="preload" href="assets/img/hero/retrato-1024.webp" as="image">
 <link rel="stylesheet" href="assets/css/fontes.css?v=1">
-<link rel="stylesheet" href="assets/css/marilia.css?v=5">
+<link rel="stylesheet" href="assets/css/marilia.css?v=6">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"TattooParlor","name":"Marília Crozatti · Studio Ink'Alma","description":"Fineline, tatuagens energéticas, reformas e coberturas.","address":{"@type":"PostalAddress","addressLocality":"Campinas","addressRegion":"SP","addressCountry":"BR"},"telephone":"+55 19 99264-4487","sameAs":["https://www.instagram.com/mariliacrozatti.tattoo/"]}
 </script>
@@ -87,41 +87,25 @@
 
 <!-- TOPO -->
 <section class="hero" id="inicio" aria-label="Marília Crozatti, fineline tattoo">
-  <div class="hero-fundo" data-fios="0" data-v-pe="assets/video/fios-pe.mp4" data-v-deitado="assets/video/fios-deitado.mp4">
-    <canvas aria-hidden="true"></canvas>
-    <video muted loop playsinline preload="none" aria-hidden="true"></video>
-  </div>
+  <figure class="hero-foto">
+    <img src="assets/img/hero/retrato-1024.webp" srcset="assets/img/hero/retrato-720.webp 720w, assets/img/hero/retrato-1024.webp 1024w" sizes="(max-width: 700px) 100vw, 46vw" alt="Marília Crozatti de camisa branca, sentada na varanda" width="1024" height="1024" fetchpriority="high">
+    <svg class="hero-mc" aria-hidden="true"><use href="#mc"/></svg>
+    <figcaption>Studio Ink'Alma · Campinas</figcaption>
+  </figure>
 
-  <div class="hero-in">
-    <div class="hero-texto">
-      <p class="hero-chapeu"><svg aria-hidden="true"><use href="#estrela"/></svg>Fineline Tattoo · Campinas, SP</p>
-      <h1 class="hero-nome"><span class="ln"><span>Marília</span></span><span class="ln"><span>Crozatti</span></span></h1>
-      <p class="hero-sub">Especialista em fineline. Energéticas exclusivas e reformas de tirar o fôlego.</p>
-      <ul class="hero-tags" aria-label="Especialidades">
-        <li>Fineline</li><li>Energéticas</li><li>Reformas</li><li>Pets</li>
-      </ul>
-      <div class="hero-botoes">
-        <a class="btn btn-cheio" data-zap="Oi, Marília! Vim pelo site e queria agendar uma tatuagem." href="https://wa.me/5519992644487"><svg aria-hidden="true"><use href="#zap"/></svg><span>Agendar<span class="so-largo"> pelo WhatsApp</span></span></a>
-        <a class="btn btn-linha" href="#trabalhos">Ver trabalhos<svg aria-hidden="true"><use href="#seta"/></svg></a>
-      </div>
+  <div class="hero-texto">
+    <p class="hero-chapeu"><svg aria-hidden="true"><use href="#estrela"/></svg>Fineline Tattoo · desde 2015</p>
+    <h1 class="hero-nome"><span>Marília</span><span>Crozatti</span></h1>
+    <p class="hero-sub">Traço fino, energéticas feitas a partir do seu mapa astral e reformas que devolvem o orgulho da tatuagem antiga.</p>
+    <div class="hero-botoes">
+      <a class="btn btn-cheio" data-zap="Oi, Marília! Vim pelo site e queria agendar uma tatuagem." href="https://wa.me/5519992644487"><svg aria-hidden="true"><use href="#zap"/></svg><span>Agendar<span class="so-largo"> pelo WhatsApp</span></span></a>
+      <a class="btn btn-linha" href="#trabalhos">Ver trabalhos<svg aria-hidden="true"><use href="#seta"/></svg></a>
     </div>
-
-    <div class="hero-arte">
-      <svg class="hero-mc" aria-hidden="true"><use href="#mc"/></svg>
-      <div class="hero-quadro">
-        <figure class="hero-foto">
-          <img src="assets/img/hero/papoula-720.webp" srcset="assets/img/hero/papoula-720.webp 720w, assets/img/hero/papoula-1170.webp 1170w" sizes="(max-width: 700px) 50vw, 30vw" alt="Tatuagem energética de Marília Crozatti: papoula sobre mandala em linha fina no braço" width="1170" height="1872" fetchpriority="high">
-        </figure>
-        <p class="hero-leg"><b>Energética da Thaísa</b><span>☉ Touro</span><span>↑ Câncer</span><span>☾ Leão</span></p>
-      </div>
-    </div>
+    <ul class="hero-info">
+      <li><svg aria-hidden="true"><use href="#pin"/></svg>Studio Ink'Alma, Campinas</li>
+      <li>Atendimento com horário marcado</li>
+    </ul>
   </div>
-
-  <ul class="hero-info">
-    <li><svg aria-hidden="true"><use href="#pin"/></svg>Studio Ink'Alma, Campinas</li>
-    <li>Atendimento com horário marcado</li>
-    <li><span data-conta="15">15</span> mil no Instagram</li>
-  </ul>
 </section>
 
 <!-- MANIFESTO -->
@@ -184,6 +168,10 @@
 <section class="secao energ" id="energeticas" aria-labelledby="energ-t">
   <div class="caixa">
     <div class="energ-topo">
+      <div class="tela-video energ-video revela">
+        <video src="assets/video/089.mp4" poster="assets/img/poster-089.webp" muted loop playsinline preload="none" aria-label="Vídeo: energética da Simone pronta no braço"></video>
+        <button class="som" type="button" aria-pressed="false" aria-label="Ligar o som"><svg aria-hidden="true"><use href="#som"/></svg></button>
+      </div>
       <header class="cab cab-esq revela">
         <p class="script" aria-hidden="true">Energéticas</p>
         <h2 id="energ-t">Tatuagens energéticas</h2>
@@ -211,10 +199,6 @@
     </div>
 
     <div class="energ-baixo">
-      <div class="tela-video revela">
-        <video src="assets/video/089.mp4" poster="assets/img/poster-089.webp" muted loop playsinline preload="none" aria-label="Vídeo: energética da Simone pronta no braço"></video>
-        <button class="som" type="button" aria-pressed="false" aria-label="Ligar o som"><svg aria-hidden="true"><use href="#som"/></svg></button>
-      </div>
       <div class="energ-citacao revela">
         <svg class="est" aria-hidden="true"><use href="#estrela"/></svg>
         <blockquote>O valor de uma tatuagem não está só no desenho, mas na experiência de quem te marca para sempre, na leitura de quem você é e na delicadeza de transformar isso em arte permanente.</blockquote>
@@ -224,18 +208,6 @@
       </div>
     </div>
 
-    <article class="seren revela" aria-labelledby="seren-t">
-      <div class="seren-fotos">
-        <img src="assets/img/serendipidade/tiragem-640.webp" srcset="assets/img/serendipidade/tiragem-640.webp 640w, assets/img/serendipidade/tiragem-1080.webp 1080w" sizes="(max-width: 700px) 45vw, 260px" alt="Tatuagem do Projeto Serendipidade no antebraço" loading="lazy" width="640" height="800">
-        <img src="assets/img/serendipidade/tattoo-640.webp" srcset="assets/img/serendipidade/tattoo-640.webp 640w, assets/img/serendipidade/tattoo-1080.webp 1080w" sizes="(max-width: 700px) 45vw, 260px" alt="Primeira tatuagem do Projeto Serendipidade" loading="lazy" width="640" height="800">
-      </div>
-      <div class="seren-txt">
-        <p class="rotulo">Novo</p>
-        <h3 id="seren-t">Projeto Serendipidade</h3>
-        <p>O tarot vira o mapa do momento e a arte, um lembrete permanente. A tiragem guia o desenho até a pergunta que só você sabe fazer, e a Marília desenha para revelar a força que você já procura dentro de si. Mais solto e fluido que as energéticas.</p>
-        <a class="link-seta" data-zap="Oi, Marília! Vim pelo site e quero saber mais sobre o Projeto Serendipidade." href="https://wa.me/5519992644487">Quero saber mais<svg aria-hidden="true"><use href="#seta"/></svg></a>
-      </div>
-    </article>
   </div>
 </section>
 
@@ -292,7 +264,7 @@
 <section class="secao sobre" id="sobre" aria-labelledby="sobre-t">
   <div class="caixa sobre-grade">
     <div class="sobre-fotos revela">
-      <figure class="sf-1"><img src="assets/img/artista/marilia-720.webp" srcset="assets/img/artista/marilia-720.webp 720w, assets/img/artista/marilia-1024.webp 819w" sizes="(max-width: 900px) 92vw, 44vw" alt="Marília Crozatti de camisa branca, sentada na varanda" loading="lazy" width="720" height="900"></figure>
+      <figure class="sf-1"><img src="assets/img/artista/marilia-720.webp" srcset="assets/img/artista/marilia-720.webp 720w, assets/img/artista/marilia-1080.webp 1080w" sizes="(max-width: 900px) 92vw, 44vw" alt="Marília Crozatti sorrindo no estúdio, com a parede de plantas atrás" loading="lazy" width="720" height="900"></figure>
     </div>
     <div class="sobre-txt">
       <header class="cab cab-esq revela">
@@ -370,7 +342,7 @@
     </header>
     <div class="relatos-grade">
       <figure class="relato revela"><blockquote>Entregar minha pele para uma tatuagem energética, sem saber exatamente o que seria marcado ali. O processo foi intuitivo, quase um ritual. No fim, o desenho fez total sentido.</blockquote><figcaption>Cliente de energética</figcaption></figure>
-      <figure class="relato revela"><blockquote>Musa da fine line e do tarot! Dez anos que ela me tatua. Obrigada por me ler tão bem sempre!</blockquote><figcaption>Cliente do Projeto Serendipidade</figcaption></figure>
+      <figure class="relato revela"><blockquote>Musa da fine line e do tarot! Dez anos que ela me tatua. Obrigada por me ler tão bem sempre!</blockquote><figcaption>Cliente há dez anos</figcaption></figure>
       <figure class="relato revela"><blockquote>Desde a conexão com a artista até o significado profundo por trás de cada traço, senti uma transformação única.</blockquote><figcaption>Cliente de energética</figcaption></figure>
     </div>
   </div>
@@ -400,7 +372,7 @@
       <label>Seu nome<input name="nome" autocomplete="given-name" required></label>
       <label>Estilo
         <select name="estilo">
-          <option>Fineline</option><option>Criação exclusiva</option><option>Energética</option><option>Projeto Serendipidade</option><option>Realismo pet</option><option>Foto minimalista</option><option>Escrita</option><option>Reforma</option><option>Cobertura</option><option>Ainda não sei</option>
+          <option>Fineline</option><option>Criação exclusiva</option><option>Energética</option><option>Realismo pet</option><option>Foto minimalista</option><option>Escrita</option><option>Reforma</option><option>Cobertura</option><option>Ainda não sei</option>
         </select>
       </label>
       <label>Ideia<textarea name="ideia" rows="3" placeholder="Conte o que você imagina"></textarea></label>
@@ -441,7 +413,6 @@
 </div>
 
 <script src="assets/js/obras.js?v=1"></script>
-<script src="assets/js/fios.js?v=1"></script>
-<script src="assets/js/marilia.js?v=1"></script>
+<script src="assets/js/marilia.js?v=2"></script>
 </body>
 </html>

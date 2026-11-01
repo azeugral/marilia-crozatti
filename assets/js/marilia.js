@@ -1,4 +1,4 @@
-/* Marília Crozatti: topo, menu, entradas, fios do topo, vídeos com fala, portfólio, comparador, trilho, ficha do WhatsApp. */
+/* Marília Crozatti: topo, menu, entradas, vídeos com fala, portfólio, comparador, trilho, ficha do WhatsApp. */
 (function () {
   const $ = (s, el = document) => el.querySelector(s);
   const $$ = (s, el = document) => [...el.querySelectorAll(s)];
@@ -101,53 +101,6 @@
     }
   }
 
-  /* fios do topo (assets/js/fios.js): ao vivo em WebGL no desktop; em telas de toque, o MP4 do mesmo
-     shader (em pé ou deitado). Só anima quando está na tela; com "reduzir movimento" fica um quadro parado. */
-  const toque = matchMedia('(hover: none), (pointer: coarse)').matches;
-  $$('[data-fios]').forEach(box => {
-    const cv = $('canvas', box), vid = $('video', box);
-    const ver = cb => 'IntersectionObserver' in window
-      ? new IntersectionObserver(([e]) => cb(e.isIntersecting), { rootMargin: '100px 0px' }).observe(box)
-      : cb(true);
-    const usarVideo = () => {
-      if (!vid) return;
-      box.classList.add('em-video');
-      ver(dentro => {
-        if (dentro) {
-          if (!vid.src) {
-            vid.src = innerWidth > innerHeight ? box.dataset.vDeitado : box.dataset.vPe;
-            vid.addEventListener(reduz ? 'loadeddata' : 'playing', () => box.classList.add('viva'), { once: true });
-          }
-          if (!reduz) { const p = vid.play(); if (p && p.catch) p.catch(() => {}); }
-        } else vid.pause();
-      });
-    };
-    if (toque || !window.fiosGL) { usarVideo(); return; }
-    let T = null;
-    try { T = fiosGL(cv, { modo: +box.dataset.fios }); } catch (e) { T = null; }
-    if (!T) { usarVideo(); return; }
-    cv.addEventListener('webglcontextlost', e => { e.preventDefault(); box.classList.remove('viva'); T = null; });
-    const CICLO = 40000;
-    let esc = Math.min(devicePixelRatio || 1, 1.5), fase = .6;
-    const ajusta = () => { if (!T) return; T.tamanho(Math.max(2, Math.round(box.clientWidth * esc)), Math.max(2, Math.round(box.clientHeight * esc)), esc); T.desenhar(fase); };
-    ajusta(); addEventListener('resize', ajusta);
-    if (reduz) { box.classList.add('viva'); return; }
-    let ve = false, ult = 0, soma = 0, n = 0;
-    const t0 = performance.now();
-    const quadro = t => {
-      if (!T) return;
-      requestAnimationFrame(quadro);
-      if (!ve || document.hidden) { ult = 0; return; }
-      if (ult) { soma += t - ult; n++; }
-      ult = t;
-      if (n === 40) { if (soma / n > 22 && esc > .75) { esc *= .85; ajusta(); } soma = 0; n = 0; }
-      fase = .6 + ((t - t0) % CICLO) / CICLO * 6.283185307179586;
-      T.desenhar(fase);
-      box.classList.add('viva');
-    };
-    ver(dentro => { ve = dentro; ult = 0; });
-    requestAnimationFrame(quadro);
-  });
 
   /* vídeos com fala: tocam mudos quando estão na tela; o botão liga o som do início,
      e só um fica com som por vez */

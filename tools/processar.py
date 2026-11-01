@@ -130,15 +130,14 @@ def main():
 
     # topo: a energética com papoula, inteira em pé
     salvar(recorte(abrir('297_0'), 1.6, .35), 'hero', 'papoula', (720, 1170), 82)
-    # artista, estúdio e o projeto Serendipidade
-    # retrato enviado pela cliente (substituiu a foto 459 e o vídeo 515 no "Sobre")
-    ret = Image.open(os.path.join(REF, 'marilia-retrato.jpg')).convert('RGB')
-    salvar(recorte(ret, 1.25, .5, .3), 'artista', 'marilia', (720, 1024), 84)
+    # estúdio
+    # fotos enviadas pela cliente: o retrato da varanda no topo (inteiro, o CSS recorta) e a selfie no "Sobre"
+    salvar(Image.open(os.path.join(REF, 'marilia-retrato.jpg')).convert('RGB'), 'hero', 'retrato', (720, 1024), 84)
+    selfie = Image.open(os.path.join(REF, 'marilia-selfie.png')).convert('RGB')
+    salvar(recorte(selfie, 1.25, .3), 'artista', 'marilia', (720, 1080), 84)
     salvar(recorte(abrir('176_0'), 1.25, .35), 'artista', 'marilia-estudio', (640,), 82)
     salvar(recorte(abrir('360_0'), 1.25, .55), 'estudio', 'sala', (720,), 82)
     salvar(recorte(abrir('016_0'), 1.0, 1.0), 'estudio', 'atendimento', (720, 1080), 82)
-    salvar(recorte(abrir('059_3'), 1.25, .5), 'serendipidade', 'tattoo', (640, 1080))
-    salvar(recorte(abrir('053_3'), 1.25, .5), 'serendipidade', 'tiragem', (640, 1080))
 
     if '--videos' in os.sys.argv:
         video('089', som=True); video('666', som=True)
