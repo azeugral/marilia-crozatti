@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 90 320 900"><g stroke-width="16">
+    <g fill="none" stroke="#f1ece3" stroke-linecap="round" stroke-linejoin="round">
+      <path data-t="t1" d="M155 206V985"/>
+      <circle data-t="t2" cx="155" cy="178" r="28"/>
+      <path data-t="t3" d="M174 158L226 104"/>
+      <path data-t="t4" d="M75 630V235L155 489L232 235V965"/>
+      <circle data-t="t5" cx="155" cy="515" r="26"/>
+      <path data-t="t6" d="M128 625C128 565 24 565 24 625V905C24 965 128 965 128 905"/>
+      <path data-t="t7" d="M160 578H292"/>
+    </g>
+    <g class="pts" fill="#f1ece3"><circle cx="75" cy="630" r="7"/><circle cx="128" cy="625" r="7"/><circle cx="128" cy="905" r="7"/><circle cx="232" cy="965" r="7"/><circle cx="232" cy="578" r="5"/></g>
+  </g></svg>
